@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Không Tìm Thấy Trang</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 50%, #1e1e1e, #0a0a0a);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 8rem;
+      letter-spacing: 10px;
+      animation: glitch 1.5s infinite;
+      color: #ff4c4c;
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px #00ffff; }
+      20% { text-shadow: -2px -2px #ff00ff; }
+      40% { text-shadow: 2px -2px #00ffff; }
+      60% { text-shadow: -2px 2px #ff00ff; }
+      80% { text-shadow: 2px 2px #00ffff; }
+      100% { text-shadow: -2px -2px #ff00ff; }
+    }
+
+    p {
+      margin: 20px 0;
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+
+    button {
+      background: #ff4c4c;
+      border: none;
+      color: #fff;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff0000;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #ff0000;
+    }
+
+    .glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #ff000022, transparent 70%);
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: moveGlow 5s infinite alternate ease-in-out;
+    }
+
+    @keyframes moveGlow {
+      from { top: 20%; left: 30%; }
+      to { top: 50%; left: 60%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <h1>404</h1>
+  <p>Trang bạn tìm kiếm không tồn tại hoặc đã bị xóa 🧱💀</p>
+  <button onclick="goHome()">Quay về trang chủ</button>
+
+  <script>
+    function goHome() {
+      window.location.href = "/"; // Đổi thành link trang chủ của mày
+    }
+
+    // Hiệu ứng chữ rung nhẹ
+    document.querySelector("h1").addEventListener("mouseover", () => {
+      document.querySelector("h1").style.transform = "rotate(1deg)";
+      setTimeout(() => document.querySelector("h1").style.transform = "rotate(0deg)", 100);
+    });
+  </script>
+</body>
+</html>
