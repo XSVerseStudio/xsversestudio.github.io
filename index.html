@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XSVerse Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9fafb;
+  color: #1e1e2f;
+}
+header {
+  position: sticky;
+  top: 0;
+  background-color: #162447;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+header .logo {
+  font-size: 26px;
+  font-weight: bold;
+}
+header nav a {
+  color: #fff;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+header nav a:hover {
+  color: #e43f5a;
+}
+.hero {
+  background: linear-gradient(135deg,#e43f5a,#ff7a5c);
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.hero .btn {
+  padding: 16px 32px;
+  font-size: 18px;
+  color: #fff;
+  background: #1e1e2f;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+.hero .btn:hover {
+  background: #2a2a40;
+  transform: scale(1.05);
+}
+.search-box {
+  max-width: 300px;
+  margin: 30px auto 0 auto;
+  position: relative;
+}
+.search-box input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+.suggestions {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 10;
+}
+.suggestions div {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.suggestions div:hover {
+  background: #f0f0f0;
+}
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  gap: 30px;
+}
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card h2 {
+  margin-bottom: 15px;
+  color: #162447;
+}
+.card p {
+  line-height: 1.6;
+}
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.card .btn-secondary {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  background: linear-gradient(90deg,#e43f5a,#ff7a5c);
+  color: #fff;
+  border-radius: 6px;
+  transition: transform 0.2s;
+}
+.card .btn-secondary:hover {
+  transform: scale(1.05);
+}
+footer {
+  background: #162447;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+}
+footer a {
+  color: #ff7a5c;
+  text-decoration: none;
+  margin: 0 10px;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+@media(max-width:768px){
+  header { flex-direction: column; text-align: center; }
+  header nav a { margin: 10px; }
+  .hero h1 { font-size: 32px; }
+  .hero p { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">XSVerse Studio</div>
+  <nav>
+    <a href="docs.html">📜 Tài Liệu</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Giới Thiệu Website</h1>
+  <p>Phân tích truyện tranh, chia sẻ các câu chuyện kỳ bí, hấp dẫn, miễn phí chất lượng cao, không có bất kỳ quảng cáo nào trên WEBSITE, Tăng cảm giác trải nghiệm/đọc truyện không giới hạn, không quảng cáo khi đang đọc hấp dẫn.</p>
+  <button class="btn" onclick="window.location.href='mailto:ziugpro@gmail.com'">📧 Gửi Email</button>
+</section>
+
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Tìm kiếm blog theo tên...">
+  <div class="suggestions" id="suggestions"></div>
+</div>
+
+<div class="container" id="blogContainer">
+  <div class="card" data-title="Truyện Tranh">
+    <img src="https://images.pexels.com/photos/7808593/pexels-photo-7808593.jpeg" alt="Truyện Tranh 1">
+    <h2>Truyện Tranh 1</h2>
+    <p>Thể loại: Kinh dị, truyện tranh, hư cấu.</p>
+    <a href="truyen1.html" class="btn-secondary">Đọc truyện</a>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 / Bản quyền được bảo vệ bởi XSVerse Studio</p>
+</footer>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const suggestions = document.getElementById("suggestions");
+const blogContainer = document.getElementById("blogContainer");
+const cards = Array.from(blogContainer.querySelectorAll(".card"));
+
+function updateDisplay(keyword) {
+  const lower = keyword.toLowerCase().trim();
+  let matchedCards = [];
+  cards.forEach(card => {
+    const title = card.dataset.title.toLowerCase();
+    const isMatch = title.includes(lower);
+    card.style.display = isMatch || !lower ? "block" : "none";
+    if(isMatch) matchedCards.push(card);
+  });
+  suggestions.innerHTML = matchedCards.map(c => `<div data-title="${c.dataset.title}">${c.dataset.title}</div>`).join("");
+  suggestions.style.display = matchedCards.length ? "block" : "none";
+}
+
+searchInput.addEventListener("input", () => {
+  const keyword = searchInput.value;
+  updateDisplay(keyword);
+});
+
+suggestions.addEventListener("click", e => {
+  const div = e.target.closest("div");
+  if(!div) return;
+  searchInput.value = div.dataset.title;
+  updateDisplay(div.dataset.title);
+  suggestions.style.display = "none";
+});
+
+document.addEventListener("click", e => {
+  if(!suggestions.contains(e.target) && e.target !== searchInput){
+    suggestions.style.display = "none";
+  }
+});
+</script>
+
+</body>
+  </html>
